@@ -14,8 +14,8 @@ body{
 .head-con{
 	background-size: cover;
 	background-color: #fbbc04;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-bottom: 8px;
+	padding-top: 8px;
 }
 .co-he{
 	display: flex;
@@ -42,74 +42,115 @@ body{
 	margin-left: 20px;
 	margin-right: 5px;
 }
+
+
 .wrapper{
 	display: flex;
-	position: relative;
 }
+
+
 .wrapper .sidebar{
-	position: fixed;
-	width: 200px;
+	position: absolute;
+	width: 250px;
 	height: 100%;
 	background: #383838;
 	font-weight: 900;
 }
+.wrapper .sidebar-player{
+	position: absolute;
+	width: 250px;
+	height: 8630px;
+	background: #383838;
+	font-weight: 900;
+}
+
+
 .wrapper .sidebar ul li a{
-	font-size: 13px;
+	font-size: 15px;
 	color: white;
 	display: block;
-	margin-left: 5px;
+	margin-left: 20px;
 	padding: 10px;
 }
+.wrapper .sidebar-player ul li a{
+	font-size: 15px;
+	color: white;
+	display: block;
+	margin-left: 20px;
+	padding: 10px;
+}
+
+
 .wrapper .sidebar ul li a .fa-solid{
 	width: 25px;
 }
+.wrapper .sidebar-player ul li a .fa-solid{
+	width: 25px;
+}
+
+
 .wrapper .sidebar ul li a .fa-brands{
 	width: 25px;
 }
+.wrapper .sidebar-player ul li a .fa-brands{
+	width: 25px;
+}
+
+
 .wrapper .sidebar ul li:hover{
 	background: #fbbc04;
 }
+.wrapper .sidebar-player ul li:hover{
+	background: #fbbc04;
+}
+
+
 .wrapper .sidebar ul li:hover a{
 	color: black;
 }
+.wrapper .sidebar-player ul li:hover a{
+	color: black;
+}
+
+
 .all-cover{
 	position: relative;
 	background-size: cover;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	width: 700px;
+	width: 900px;
 	background-color: white;
 	border-radius: 10px;
 	color: black;
-	margin-left: 200px;
+	margin-left: 250px;
 	border: 2px solid black;
 }
 .all-cover h4{
 	margin-top: 20px;
 	margin-bottom: 10px;
-	font-size: 30px;
+	font-size: 34px;
 	color: black;
 }
 .all-cover input, select {
-  width: 400px;
-  padding: 5px;
+  width: 500px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
-  font-size: 13px;
+  font-size: 15px;
   align-items: left;
   display: inline-block;
   margin-top: 10px;
   margin-right: 15px;
 }
 .all-cover textarea{
-	width: 400px;
+	width: 500px;
 	height: 170px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
-  font-size: 13px;
+  font-size: 14px;
   align-items: left;
   display: inline-block;
   margin-top: 10px;
@@ -118,7 +159,7 @@ body{
 .all-cover label {
   width: 120px;
   display: inline-block;
-  font-size: 13px;
+  font-size: 15px;
   margin-right: 5px;
   text-align: right;
   align-items: center;
@@ -155,12 +196,14 @@ body{
 	margin-left: 220px;
 }
 iframe{
-	width: 100%;
-	height: 100%;
+	margin-left: 210px;
+	width: 990px;
+	height: 8100px;
 }
 .line-pro1{
 	background-color: #fbbc04;
 	padding: 1.5px;
+	width: 250px;
 }
 .waiting{
 	color: white;
