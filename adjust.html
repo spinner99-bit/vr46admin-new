@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style2.css">
+
+	<title>Admin Dashboard</title>
+	<link rel="shortcut icon" href="logo.png">
+	<script src="https://kit.fontawesome.com/e3ce135c28.js" crossorigin="anonymous"></script>
+
+
+		<style>
+		#outer {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+		}
+	</style>
+
+
+</head>
+<body onload="startTime()">
+
+	<!-- Head Content -->
+
+	<div class="head-con">
+		<div class="co-he">
+			<div><img src="logo.png"></div>
+			<h2>ADMIN DASHBOARD</h2>
+			<i class="fa-solid fa-calendar-days"></i>
+			<div id="time" class="time"></div>
+		</div>
+	</div>
+
+	<script>
+		function startTime() {
+		  const today = new Date();
+		  let mo = today.getMonth();
+		  let de = today.getDate();
+		  let y = today.getFullYear();
+		  let h = today.getHours();
+		  let m = today.getMinutes();
+		  let s = today.getSeconds();
+		  m = checkTime(m);
+		  s = checkTime(s);
+		  mo = checkTime(mo);
+		  de = checkTime(de);
+		  
+		  
+		  document.getElementById('time').innerHTML =  y + "-" + mo + "-" + de + " " +  h + ":" + m + ":" + s;
+		  setTimeout(startTime, 1000);
+		}
+
+		function checkTime(i) {
+		  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		  return i;
+		}
+	</script>
+
+	<!-- End Head Content -->
+
+	 <!-- Sidebar Content -->
+
+		 <div class="wrapper">
+		 	<div class="sidebar">
+		 		<ul>
+
+		 			<li><a href="playerlist.html"><i class="fa-solid fa-user-secret"></i>Add Player</a></li>
+
+		 			<li><a href="game.html"><i class="fa-solid fa-address-card"></i>Add Player Game ID</a></li>
+
+		 			<li><a href="remark.html"><i class="fa-solid fa-pen"></i>Player Remark</a></li>
+
+		 			<li><a href="deposit.html"><i class="fa-solid fa-money-bill-trend-up"></i>Add Deposit</a></li>
+
+		 			<li><a href="withdraw.html"><i class="fa-solid fa-comments-dollar"></i>Add Withdraw</a></li>
+
+		 			<li><a href="freebonus.html"><i class="fa-solid fa-gift"></i>Add Free Bonus</a></li>
+
+		 			<li><a href="transfer.html"><i class="fa-solid fa-right-left"></i>Credit Transfer</a></li>
+
+		 			<li><a href="adjust.html"><i class="fa-solid fa-sliders"></i>Adjust Credit</a></li>
+
+		 			<div id="verticle-line" class="line-pro1"></div>
+		 			<div class="waiting">Waiting To Update</div>
+
+		 			<li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a></li>
+		 			<li><a href="transaction.html"><i class="fa-solid fa-money-bill-transfer"></i>All Transaction</a></li>
+		 			<li><a href="bank.html"><i class="fa-solid fa-building-columns"></i>Bank transaction</a></li>
+		 			<li><a href="cashback.html"><i class="fa-brands fa-discord"></i>Cashback</a></li>
+
+		 		</ul>
+		 	</div>
+		</div>
+
+		 <!-- End Sidebar Content -->
+
+	<div id="outer">
+		<div id="inner"></div>
+
+		<div class="all-cover">
+
+			<form method="post" action="" class="form" name="add-adjust">
+
+				<h4>Adjust Credit</h4>
+
+				<label class="add-type">Type</label>
+				<select name="type" data-placeholder="Forfiet" id="type" class="add-type">
+	       			<option value="Forfiet">Forfiet</option>
+	       			<option value="Reset">Reset</option>
+	       				<option value="Reload Kiosk">Reload Kiosk</option>
+	       		</select>
+	       		<br>
+
+				<label>Username</label>
+				<input type="text" name="username" placeholder="Username" id="username">
+				<br>
+
+				<label>Amount</label>
+				<input type="text" name="amount" placeholder="Deposit Amount" id="amount">
+				<br>
+							
+				<label>Product</label>
+				<select name="product" data-placeholder="Select Your Choice" id="product">
+	       			<option value="Select Your Choice">Select Your Choice</option>
+	       					<option value="918Kiss">918Kiss</option>
+	       					<option value="Mega888">Mega888</option>
+	       					<option value="Pussy888">Pussy888</option>
+	       					<option value="Joker123">Joker123</option>
+	       					<option value="Live22">Live22</option>
+	       					<option value="Greatwall">Greatwall</option>
+	       					<option value="Newtown">Newtown</option>
+	       					<option value="Lpe88">Lpe88</option>
+	       		</select>
+	       		<br>
+
+					<button id="submit" onclick="audio.play();" class="submit">Add</button>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const audio = new Audio();
+		audio.src = "sounds.mp3";
+	</script>
+
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbyhqYpOjeA7TJmyGFhh6MSbtKZRRViK93e-AwIgGZOQU8-GJqH3QLoLj44MGGtd0I4t/exec'
+
+		const form = document.forms['add-adjust']
+
+			form.addEventListener('submit', e => {
+			e.preventDefault()
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("Successfully Adjust Credit." ))
+			.then(() => { window.location.reload(); })
+			.catch(error => console.error('Error! Please try again', error.message))
+			})
+	</script>
+
+</body>
+</html>

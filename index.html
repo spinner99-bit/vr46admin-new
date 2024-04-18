@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Login</title>
+	<link rel="shortcut icon" href="logo.png">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="label">Admin Login</h1>
+		<form class="login_form" action="dashboard.html" method="post" name="form" onsubmit="return validated()">
+
+			<div class="font">Username</div>
+			<input type="text" name="username" id="username" required>
+			<div id="username_error">Please fill up your Username</div>
+
+			<div class="font font2">Password</div>
+			<input type="password" name="password" id="password" required>
+			<div id="password_error">Please fill up your Password</div>
+
+			<button type="submit">Login</button>
+		</form>
+	</div>	
+	<script>
+		
+			//Validtion Code For Inputs
+
+var username = document.forms['form']['username'];
+var password = document.forms['form']['password'];
+
+var username_error = document.getElementById('username_error');
+var password_error = document.getElementById('password_error');
+
+username.addEventListener('textInput', username_Verify);
+password.addEventListener('textInput', password_Verify);
+
+function validated(){
+	if (username.value.length < 2) {
+		username.style.border = "1px solid red";
+		username_error.style.display = "block";
+		username.focus();
+		return false;
+	}
+	if (password.value.length < 1) {
+		password.style.border = "1px solid red";
+		password_error.style.display = "block";
+		password.focus();
+		return false;
+	}
+
+}
+function username_Verify(){
+	if (username.value.length >= 3) {
+		username.style.border = "1px solid silver";
+		username_error.style.display = "none";
+		return true;
+	}
+}
+function password_Verify(){
+	if (password.value.length >= 2) {
+		password.style.border = "1px solid silver";
+		password_error.style.display = "none";
+		return true;
+	}
+}
+
+
+	</script>
+</body>
+</html>
