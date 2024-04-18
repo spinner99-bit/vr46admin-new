@@ -45,6 +45,7 @@
 		  s = checkTime(s);
 		  mo = checkTime(mo);
 		  de = checkTime(de);
+		  h = checkTime(h);
 		  
 		  
 		  document.getElementById('time').innerHTML =  y + "-" + mo + "-" + de + " " +  h + ":" + m + ":" + s;
@@ -62,7 +63,7 @@
 	 <!-- Sidebar Content -->
 
 		 <div class="wrapper">
-		 	<div class="sidebar">
+		 	<div class="sidebar-player">
 		 		<ul>
 
 		 			<li><a href="playerlist.html"><i class="fa-solid fa-user-secret"></i>Add Player</a></li>
@@ -188,6 +189,10 @@
 			.catch(error => console.error('Error! Please try again', error.message))
 			})
 	</script>
+
+
+		<iframe src="https://script.google.com/macros/s/AKfycbxs3T5J862GNN0gEWfloIrgT5kqX0f7IoZIwEPs9SYKvmLghMprMGQdQXg4z5_x-VW9ww/exec"height="100%" width="100%"></iframe>
+
 
 </body>
 </html>
